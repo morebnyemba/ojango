@@ -24,3 +24,19 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Add to your globals.css */
+:root {
+  --calendly-blue: #006bff;
+  --calendly-blue-dark: #0052cc;
+  --calendly-gray-50: #f9fafb;
+  --calendly-gray-100: #f3f4f6;
+  --calendly-gray-200: #e5e7eb;
+  --calendly-gray-300: #d1d5db;
+  --calendly-gray-400: #9ca3af;
+  --calendly-gray-500: #6b7280;
+  --calendly-gray-600: #4b5563;
+  --calendly-gray-700: #374151;
+  --calendly-gray-800: #1f2937;
+  --calendly-gray-900: #111827;
+}
