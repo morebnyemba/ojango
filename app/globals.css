@@ -8,17 +8,17 @@
   --background: 255 255 255; /* white */
   --foreground: 23 23 23; /* neutral-900 */
 
-  /* Primary: Off Blue (Slate) */
-  --primary-50: 248 250 252; /* slate-50 */
-  --primary-100: 241 245 249; /* slate-100 */
-  --primary-200: 226 232 240; /* slate-200 */
-  --primary-300: 203 213 225; /* slate-300 */
-  --primary-400: 148 163 184; /* slate-400 */
-  --primary-500: 100 116 139; /* slate-500 */
-  --primary-600: 71 85 105; /* slate-600 */
-  --primary-700: 51 65 85; /* slate-700 */
-  --primary-800: 30 41 59; /* slate-800 */
-  --primary-900: 15 23 42; /* slate-900 */
+  /* Primary: Blue */
+  --primary-50: 239 246 255; /* blue-50 */
+  --primary-100: 219 234 254; /* blue-100 */
+  --primary-200: 191 219 254; /* blue-200 */
+  --primary-300: 147 197 253; /* blue-300 */
+  --primary-400: 96 165 250; /* blue-400 */
+  --primary-500: 59 130 246; /* blue-500 */
+  --primary-600: 37 99 235; /* blue-600 */
+  --primary-700: 29 78 216; /* blue-700 */
+  --primary-800: 30 64 175; /* blue-800 */
+  --primary-900: 30 58 138; /* blue-900 */
 
   /* Secondary: Gold */
   --gold-300: 252 211 77; /* amber-300 */
@@ -37,7 +37,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: 15 23 42; /* slate-900 */
+    --background: 30 41 59; /* slate-800 - A slightly lighter dark for better contrast */
     --foreground: 226 232 240; /* slate-200 */
   }
 }
