@@ -1,18 +1,27 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef } from 'react'
 
 export default function BrandEssence() {
+  const sectionRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  })
+  const y = useTransform(scrollYProgress, [0, 1], ['-25%', '25%'])
+
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-900 to-primary-800 text-primary-200 relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-primary-900 to-primary-800 text-primary-200 relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
+      <motion.div
+        className="absolute inset-0 opacity-10"
+        style={{
+          y,
           backgroundImage: `radial-gradient(circle at 1px 1px, var(--primary-400) 1px, transparent 0)`,
-          backgroundSize: '50px 50px'
-        }}></div>
-      </div>
-      
+          backgroundSize: '50px 50px',
+        }}
+      />
       <div className="container mx-auto px-6 max-w-4xl relative z-10">
         <div className="text-center">
           {/* Animated Circle Logo */}

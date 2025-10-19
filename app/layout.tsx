@@ -1,9 +1,11 @@
 import './globals.css'
-import { GeistSans, GeistMono } from 'geist/font'
+import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 import { ThemeProvider } from './components/ThemeProvider'
 
 const siteUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
 const title = 'Ojango - Build Bold. Trade Free. Thrive Together.';
 const description = 'The African-made Operating System empowering entrepreneurs, creators & markets to connect, trade & grow — all in one platform.';
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'rgb(30 41 59)' }, // slate-800
+    { media: '(prefers-color-scheme: dark)', color: 'rgb(30 41 59)' },
   ],
   openGraph: {
     title: title,
@@ -54,7 +56,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>

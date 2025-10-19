@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import AnimatedStat from './AnimatedStat'
 import { Zap, Globe, Shield, CheckCircle } from 'lucide-react'
 
 const features = [
@@ -77,14 +78,10 @@ export default function ValueStack() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={stat.label} className="text-center">
-                <motion.div 
+                <AnimatedStat
+                  value={stat.number}
                   className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 mb-2"
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  {stat.number}
-                </motion.div>
+                />
                 <div className="text-primary-600 dark:text-primary-300">{stat.label}</div>
               </div>
             ))}
