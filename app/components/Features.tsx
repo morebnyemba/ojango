@@ -55,9 +55,15 @@ export default function Features() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group text-center p-6 rounded-2xl bg-background hover:shadow-2xl hover:shadow-primary-100/50 dark:hover:shadow-primary-800/50 transition-all duration-300 border border-primary-200/50 dark:border-primary-800"
             >
-              <div className="w-16 h-16 bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <motion.div
+                initial={{ scale: 0.5, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ type: 'spring', stiffness: 260, damping: 20, delay: index * 0.1 + 0.1 }}
+                viewport={{ once: true }}
+                className="w-16 h-16 bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+              >
                 <feature.icon className="w-8 h-8 text-white" />
-              </div>
+              </motion.div>
               <h3 className="text-lg font-bold text-primary-900 dark:text-primary-100 mb-4">{feature.title}</h3>
               <p className="text-primary-600 dark:text-primary-300 text-sm leading-relaxed">{feature.description}</p>
             </motion.div>
