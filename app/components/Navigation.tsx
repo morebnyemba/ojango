@@ -9,6 +9,16 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; }
+  }, [isOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10)
@@ -22,42 +32,44 @@ export default function Navigation() {
   }, [])
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/95 backdrop-blur-lg shadow-sm border-b border-primary-200/50' : 'bg-transparent border-b border-transparent'}`}>
-      <div className="container mx-auto px-6 py-3">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary-800 rounded-full flex items-center justify-center">
-              <div className="w-4 h-4 border-2 border-gold-400 rounded-full"></div>
+    <>
+      <nav className={`fixed top-0 w-full z-30 transition-all duration-300 ${scrolled ? 'bg-background/95 backdrop-blur-lg shadow-sm border-b border-primary-200/50' : 'bg-transparent border-b border-transparent'}`}>
+        <div className="container mx-auto px-6 py-3">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-primary-800 rounded-full flex items-center justify-center">
+                <div className="w-4 h-4 border-2 border-gold-400 rounded-full"></div>
+              </div>
+              <span className="font-bold text-xl text-foreground">OJANGO</span>
             </div>
-            <span className="font-bold text-xl text-foreground">OJANGO</span>
-          </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6">
-            <a href="#features" className="text-primary-600 dark:text-primary-300 hover:text-primary-900 dark:hover:text-primary-100 transition-colors">Features</a>
-            <a href="#stakeholders" className="text-primary-600 dark:text-primary-300 hover:text-primary-900 dark:hover:text-primary-100 transition-colors">For You</a>
-            <a href="#waitlist" className="text-primary-600 dark:text-primary-300 hover:text-primary-900 dark:hover:text-primary-100 transition-colors">Waitlist</a>
-            <div className="w-px h-6 bg-primary-200 dark:bg-primary-700"></div>
-            <ThemeToggle />
-            <a href="#waitlist" className="bg-primary-700 text-white px-6 py-2 rounded-lg hover:bg-primary-800 transition-colors">
-              Join Waitlist
-            </a>
-          </div>
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center space-x-6">
+              <a href="#features" className="text-primary-600 dark:text-primary-300 hover:text-primary-900 dark:hover:text-primary-100 transition-colors">Features</a>
+              <a href="#stakeholders" className="text-primary-600 dark:text-primary-300 hover:text-primary-900 dark:hover:text-primary-100 transition-colors">For You</a>
+              <a href="#waitlist" className="text-primary-600 dark:text-primary-300 hover:text-primary-900 dark:hover:text-primary-100 transition-colors">Waitlist</a>
+              <div className="w-px h-6 bg-primary-200 dark:bg-primary-700"></div>
+              <ThemeToggle />
+              <a href="#waitlist" className="bg-primary-700 text-white px-6 py-2 rounded-lg hover:bg-primary-800 transition-colors">
+                Join Waitlist
+              </a>
+            </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 md:hidden">
-            <ThemeToggle />
-            <button 
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
-              className="p-2"
-            >
-              {isOpen ? <X size={24} className="text-foreground" /> : <Menu size={24} className="text-foreground" />}
-            </button>
+            {/* Mobile Menu Button */}
+            <div className="flex items-center gap-2 md:hidden">
+              <ThemeToggle />
+              <button 
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label="Toggle menu"
+                className="p-2"
+              >
+                {isOpen ? <X size={24} className="text-foreground" /> : <Menu size={24} className="text-foreground" />}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Menu Panel */}
       <AnimatePresence>
@@ -68,8 +80,8 @@ export default function Navigation() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/50 z-40 md:hidden"
+              onClick={() => setIsOpen(false)} // Close on backdrop click
+              className="fixed inset-0 bg-black/50 z-40 md:hidden" // Higher z-index
             />
 
             {/* Menu */}
@@ -78,7 +90,7 @@ export default function Navigation() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-background dark:bg-primary-900 z-50 p-6 md:hidden"
+              className="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-background dark:bg-primary-900 z-50 p-6 md:hidden" // Highest z-index
             >
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-center mb-8">
@@ -104,6 +116,6 @@ export default function Navigation() {
           </>
         )}
       </AnimatePresence>
-    </nav>
+    </>
   )
 }
