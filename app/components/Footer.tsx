@@ -4,28 +4,28 @@ import { Twitter, Youtube, Linkedin, MessageCircle, HelpCircle } from 'lucide-re
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-primary-900 text-primary-200">
       <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                <div className="w-4 h-4 border-2 border-gray-900 rounded-full"></div>
+              <div className="w-8 h-8 bg-primary-200 rounded-full flex items-center justify-center">
+                <div className="w-4 h-4 border-2 border-primary-900 rounded-full"></div>
               </div>
-              <span className="font-bold text-xl">OJANGO</span>
+              <span className="font-bold text-xl text-white">OJANGO</span>
             </div>
-            <p className="text-gray-400 mb-4 max-w-md">
+            <p className="text-primary-400 mb-4 max-w-md">
               The African-made Operating System empowering entrepreneurs, creators & markets to connect, trade & grow.
             </p>
             <div className="flex space-x-4">
-              <a href="#" aria-label="Twitter" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" aria-label="Twitter" className="text-primary-400 hover:text-white transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="#" aria-label="Youtube" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" aria-label="Youtube" className="text-primary-400 hover:text-white transition-colors">
                 <Youtube size={20} />
               </a>
-              <a href="#" aria-label="LinkedIn" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" aria-label="LinkedIn" className="text-primary-400 hover:text-white transition-colors">
                 <Linkedin size={20} />
               </a>
             </div>
@@ -33,8 +33,8 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2 text-gray-400">
+            <h3 className="font-semibold text-white mb-4">Company</h3>
+            <ul className="space-y-2 text-primary-400">
               <li><a href="#" className="hover:text-white transition-colors">About</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
@@ -44,8 +44,8 @@ export default function Footer() {
 
           {/* Product */}
           <div>
-            <h3 className="font-semibold mb-4">Product</h3>
-            <ul className="space-y-2 text-gray-400">
+            <h3 className="font-semibold text-white mb-4">Product</h3>
+            <ul className="space-y-2 text-primary-400">
               <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
               <li><a href="#" className="hover:text-white transition-colors">How It Works</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
@@ -55,8 +55,8 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h3 className="font-semibold mb-4">Support</h3>
-            <ul className="space-y-2 text-gray-400">
+            <h3 className="font-semibold text-white mb-4">Support</h3>
+            <ul className="space-y-2 text-primary-400">
               <li>
                 <a href="#" className="hover:text-white transition-colors flex items-center gap-2">
                   <MessageCircle size={16} />
@@ -76,13 +76,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-primary-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-primary-400 text-sm">
             © 2024 Ojango. Built in Africa, for the World.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <span className="text-gray-400 text-sm">Secure Infrastructure</span>
-            <span className="text-gray-400 text-sm">GDPR Compliant</span>
+            <span className="text-primary-400 text-sm">Secure Infrastructure</span>
+            <span className="text-primary-400 text-sm">GDPR Compliant</span>
           </div>
         </div>
       </div>
