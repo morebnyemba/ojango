@@ -6,6 +6,7 @@ import Stakeholders from './components/Stakeholders'
 import BrandEssence from './components/BrandEssence'
 import SocialProof from './components/SocialProof'
 import Footer from './components/Footer'
+import BackToTopButton from './components/BackToTopButton'
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <BrandEssence />
       <SocialProof />
       <Footer />
+      <BackToTopButton />
     </main>
   )
 }
