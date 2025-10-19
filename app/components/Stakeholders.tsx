@@ -26,7 +26,7 @@ const stakeholders = [
 
 export default function Stakeholders() {
   return (
-    <section id="stakeholders" className="py-20 bg-white">
+    <section id="stakeholders" className="py-20 bg-background">
       <div className="container mx-auto px-6 max-w-6xl">
         {/* Header */}
         <motion.div 

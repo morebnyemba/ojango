@@ -39,7 +39,7 @@ export default function AnimatedStat({ value, className }: AnimatedStatProps) {
   });
 
   return (
-    <motion.span ref={ref} className={className}>
+    <motion.span ref={ref} className={className} aria-live="polite">
       {prefix}
       {target !== null ? <motion.span>{display}</motion.span> : value}
       {suffix}

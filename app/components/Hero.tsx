@@ -5,7 +5,7 @@ import { Play, ArrowRight } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50/20 to-background dark:from-primary-900/10 dark:to-primary-900 pt-20 px-6">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50/20 to-background dark:from-primary-900/20 dark:to-background pt-20 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}

@@ -35,11 +35,10 @@
   --grey-900: 17 24 39; /* gray-900 */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: 30 41 59; /* slate-800 - A slightly lighter dark for better contrast */
-    --foreground: 226 232 240; /* slate-200 */
-  }
+/* Dark theme variables */
+.dark {
+  --background: 15 23 42; /* slate-900 */
+  --foreground: 226 232 240; /* slate-200 */
 }
 
 body {
