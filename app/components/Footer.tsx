@@ -1,3 +1,5 @@
+'use client'
+
 import { Twitter, Youtube, Linkedin, MessageCircle, HelpCircle } from 'lucide-react'
 
 export default function Footer() {
@@ -17,13 +19,13 @@ export default function Footer() {
               The African-made Operating System empowering entrepreneurs, creators & markets to connect, trade & grow.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" aria-label="Twitter" className="text-gray-400 hover:text-white transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" aria-label="Youtube" className="text-gray-400 hover:text-white transition-colors">
                 <Youtube size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="#" aria-label="LinkedIn" className="text-gray-400 hover:text-white transition-colors">
                 <Linkedin size={20} />
               </a>
             </div>

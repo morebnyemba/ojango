@@ -95,9 +95,9 @@ export default function SocialProof() {
             </p>
 
             <div className="space-y-4">
-              <button className="w-full bg-white text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
+              <a href="#waitlist" className="block w-full bg-white text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
                 Join 1,000+ Builders on Waitlist
-              </button>
+              </a>
               <p className="text-blue-200 text-sm">
                 Get early access, exclusive updates, and a founder-level welcome when we launch.
               </p>

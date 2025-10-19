@@ -64,7 +64,6 @@ export default function BrandEssence() {
             <p>✨ <span className="font-semibold">Built to unify.</span> Connecting Africa's digital economy</p>
             <p>🚀 <span className="font-semibold">Built to scale.</span> Growing with your ambitions</p>
             <p>🌍 <span className="font-semibold">Built for generations.</span> Creating lasting impact</p>
-          </motion.div>
         </div>
       </div>
     </section>

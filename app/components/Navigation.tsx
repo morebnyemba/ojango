@@ -23,9 +23,9 @@ export default function Navigation() {
             <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
             <a href="#stakeholders" className="text-gray-600 hover:text-gray-900 transition-colors">For You</a>
             <a href="#waitlist" className="text-gray-600 hover:text-gray-900 transition-colors">Waitlist</a>
-            <button className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+            <a href="#waitlist" className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors">
               Join Waitlist
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -43,9 +43,9 @@ export default function Navigation() {
             <a href="#features" className="block text-gray-600 hover:text-gray-900">Features</a>
             <a href="#stakeholders" className="block text-gray-600 hover:text-gray-900">For You</a>
             <a href="#waitlist" className="block text-gray-600 hover:text-gray-900">Waitlist</a>
-            <button className="w-full bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+            <a href="#waitlist" className="w-full block text-center bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors">
               Join Waitlist
-            </button>
+            </a>
           </div>
         )}
       </div>
