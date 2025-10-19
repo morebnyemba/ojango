@@ -1,15 +1,14 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { motion, useInView, useMotionValue, useSpring } from 'framer-motion'
+import { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion'
 
 interface AnimatedStatProps {
   value: string
   className?: string
-  delay?: number
 }
 
-export default function AnimatedStat({ value, className, delay = 0 }: AnimatedStatProps) {
+export default function AnimatedStat({ value, className }: AnimatedStatProps) {
   const ref = useRef<HTMLSpanElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -28,20 +27,16 @@ export default function AnimatedStat({ value, className, delay = 0 }: AnimatedSt
 
   useEffect(() => {
     if (isInView && target !== null) {
-      spring.set(target)
+      count.set(target)
     }
-  }, [spring, isInView, target])
+  }, [count, isInView, target])
 
-  const display = motion(useMotionValue(0))
-
-  useEffect(() => {
-    if (target !== null) {
-      const unsubscribe = spring.on('change', (latest) => {
-        display.set(Intl.NumberFormat().format(parseFloat(latest.toFixed(1))))
-      })
-      return unsubscribe
-    }
-  }, [spring, display, target])
+  const display = useTransform(spring, (latest) => {
+    // Handle numbers with decimals vs integers
+    const isDecimal = String(target).includes('.');
+    const fixedDigits = isDecimal ? 1 : 0;
+    return Intl.NumberFormat().format(parseFloat(latest.toFixed(fixedDigits)));
+  });
 
   return (
     <motion.span ref={ref} className={className}>
