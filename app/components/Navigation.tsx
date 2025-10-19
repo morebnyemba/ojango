@@ -46,15 +46,17 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} className="text-foreground" /> : <Menu size={24} className="text-foreground" />}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle />
+            <button 
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+              className="p-2"
+            >
+              {isOpen ? <X size={24} className="text-foreground" /> : <Menu size={24} className="text-foreground" />}
+            </button>
+          </div>
         </div>
-
       </div>
 
       {/* Mobile Menu Panel */}
@@ -93,7 +95,6 @@ export default function Navigation() {
                 </div>
 
                 <div className="mt-auto space-y-4">
-                  <ThemeToggle />
                   <a href="#waitlist" onClick={() => setIsOpen(false)} className="w-full block text-center bg-primary-700 text-white px-6 py-3 rounded-lg hover:bg-primary-800 transition-colors">
                     Join Waitlist
                   </a>
