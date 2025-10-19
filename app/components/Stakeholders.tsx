@@ -53,7 +53,7 @@ export default function Stakeholders() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="group relative"
             >
-              <div className="relative p-8 rounded-2xl bg-gradient-to-br from-primary-50/50 to-background dark:from-primary-900/20 dark:to-background border border-primary-200/50 dark:border-primary-800 group-hover:shadow-2xl group-hover:shadow-primary-100/50 dark:group-hover:shadow-primary-800/50 transition-all duration-300 h-full">
+              <div className="relative p-8 rounded-2xl bg-gradient-to-br from-primary-50/50 to-background dark:from-primary-900/20 dark:to-background border border-primary-200/50 dark:border-primary-800 group-hover:shadow-2xl group-hover:shadow-primary-100/50 dark:group-hover:shadow-primary-800/50 transition-all duration-300 h-full group-hover:-translate-y-2">
                 <div className={`w-16 h-16 bg-gradient-to-r ${stakeholder.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <stakeholder.icon className="w-8 h-8 text-white" />
                 </div>
